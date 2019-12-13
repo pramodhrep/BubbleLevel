@@ -2,5 +2,7 @@
 <resources>
 
     <dimen name="base_margin">8dp</dimen>
-    <dimen name="spot_size">84dp</dimen>
+    <dimen name="spot_size">150dp</dimen>
+    <dimen name="bubble_size">100dp</dimen>
+    <dimen name="recordItemIcon">50dp</dimen>
 </resources>

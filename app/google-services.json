@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "440415693391",
+    "firebase_url": "https://tiltspotstarter.firebaseio.com",
+    "project_id": "tiltspotstarter",
+    "storage_bucket": "tiltspotstarter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:440415693391:android:f75a2915020b32d24b583a",
+        "android_client_info": {
+          "package_name": "com.example.tiltspot_starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "440415693391-o85gmlv3jattd4ldp4b2ckgkn8ea11s3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tiltspot_starter",
+            "certificate_hash": "2e5f16e9e197907969c49c4a8929226c133575fe"
+          }
+        },
+        {
+          "client_id": "440415693391-v7k2c3dapbj40q9ugm2fjhcj4aak053l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbXr1AG7-F5-ljnzPjJvZJzw98nWbaURo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "440415693391-v7k2c3dapbj40q9ugm2fjhcj4aak053l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
