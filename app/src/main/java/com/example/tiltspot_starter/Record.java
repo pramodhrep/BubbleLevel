@@ -1,15 +1,24 @@
 package com.example.tiltspot_starter;
 
 public class Record {
-    String pitch, roll, timestamp;
+    String recordId, pitch, roll, timestamp;
 
     public Record() {
     }
 
-    public Record(String pitch, String roll, String timestamp) {
+    public Record(String recordId, String pitch, String roll, String timestamp) {
+        this.recordId = recordId;
         this.pitch = pitch;
         this.roll = roll;
         this.timestamp = timestamp;
+    }
+
+    public String getRecordId() {
+        return recordId;
+    }
+
+    public void setRecordId(String recordId) {
+        this.recordId = recordId;
     }
 
     public String getPitch() {

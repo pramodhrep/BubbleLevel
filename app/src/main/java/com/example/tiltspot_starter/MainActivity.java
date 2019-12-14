@@ -81,6 +81,8 @@ public class MainActivity extends AppCompatActivity
 
         private String timestamp;
 
+        int recordId;
+
         private Boolean isSave;
 
         ImageButton btSave, btView;
@@ -149,12 +151,12 @@ public class MainActivity extends AppCompatActivity
 
         ArrayList<Record> records = new ArrayList<>();
 
-        db.child("records").addValueEventListener(new ValueEventListener() {
+        db.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 lstRecords = new ArrayList<Record>();
-                for (DataSnapshot child : dataSnapshot.getChildren()) {
-                    Record records = child.getValue(Record.class);
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    Record records = postSnapshot.getValue(Record.class);
 
                     if(records != null){
                         _pitch = records.getPitch();
@@ -349,9 +351,10 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void pushToDB() {
+        recordId+=1;
         timestamp = String.valueOf(TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));
-        String id = db.push().getKey();
-        Record record = new Record(String.valueOf(pitch), String.valueOf(roll), timestamp);
+        String id = Integer.toString(recordId);//db.push().getKey();
+        Record record = new Record(id, String.valueOf(pitch), String.valueOf(roll), timestamp);
         db.child(id).setValue(record);
     }
 
