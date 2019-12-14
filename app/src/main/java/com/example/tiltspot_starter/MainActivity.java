@@ -149,19 +149,16 @@ public class MainActivity extends AppCompatActivity
     private void viewData() {
 
 
-        ArrayList<Record> records = new ArrayList<>();
+        final ArrayList<Record> records = new ArrayList<>();
 
         db.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 lstRecords = new ArrayList<Record>();
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                    Record records = postSnapshot.getValue(Record.class);
-
-                    if(records != null){
-                        _pitch = records.getPitch();
-                        _roll = records.getRoll();
-                        _timestamp = records.getTimestamp();
+                    _pitch = postSnapshot.getValue(Record.class).pitch;
+                    _roll = postSnapshot.getValue(Record.class).roll;
+                    _timestamp = postSnapshot.getValue(Record.class).timestamp;
 
                         Record record = new Record();
 
@@ -170,10 +167,9 @@ public class MainActivity extends AppCompatActivity
                         record.setTimestamp(_timestamp);
 
                         lstRecords.add(record);
-                    }
                 }
 
-                Intent intent = new Intent(getApplicationContext(), ViewRecords.class);
+                Intent intent = new Intent(MainActivity.this, ViewRecords.class);
                 intent.putExtra("Records", (Serializable) lstRecords);
                 startActivity(intent);
             }

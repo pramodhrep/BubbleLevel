@@ -63,15 +63,13 @@ public class ViewRecords extends AppCompatActivity {
                     }
                 }
 
-                mRecyclerView.setLayoutManager(new LinearLayoutManager(context));
+                mRecyclerView.setLayoutManager(new LinearLayoutManager(ViewRecords.this));
                 recordsAdapter = new RecordsAdapter(context, records);
                 mRecyclerView.setAdapter(recordsAdapter);
 
                 Intent intent = new Intent(getApplicationContext(), ViewRecords.class);
-                intent.putExtra("Meetings", (Serializable) lstRecords);
+                intent.putExtra("Records", (Serializable) lstRecords);
                 startActivity(intent);
-
-
             }
 
             @Override

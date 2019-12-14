@@ -1,6 +1,8 @@
 package com.example.tiltspot_starter;
 
-public class Record {
+import java.io.Serializable;
+
+public class Record implements Serializable {
     String recordId, pitch, roll, timestamp;
 
     public Record() {
